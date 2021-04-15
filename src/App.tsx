@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-function App() {
+function App(): ReactElement {
   const [count, setCount] = useState(0)
 
   return (
