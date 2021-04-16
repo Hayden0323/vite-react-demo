@@ -22,4 +22,3 @@ export * from './currencyAmount';
 export * from './tokenAmount';
 export * from './percent';
 export * from './pair';
-export * from './path';
