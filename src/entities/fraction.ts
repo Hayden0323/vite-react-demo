@@ -108,9 +108,12 @@ export class Fraction {
     }
 
     BigNumber.set({ POW_PRECISION: significantDigits + 1, ROUNDING_MODE: toPrecisionRounding[rounding] });
-    const quotient = this.numerator.dividedBy(this.denominator).toPrecision(significantDigits);
+    const quotient = this.numerator.dividedBy(this.denominator)
+    const integerLength = quotient.integerValue().toString().length
 
-    return quotient;
+    if (integerLength > significantDigits) significantDigits = integerLength
+
+    return quotient.toPrecision(significantDigits)
   }
 
   public toFixed (significantDigits: number, rounding: Rounding = Rounding.ROUND_HALF_UP): string {

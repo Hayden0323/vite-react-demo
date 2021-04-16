@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import { Token, TokenAmount } from './entities'
 
 function App(): ReactElement {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App(): ReactElement {
         </p>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
+          {Number(new TokenAmount(new Token('200-2-0', 12, 'zlk', 'zlk'), 12647384637234573).toPrecision(6))}
         </p>
         <p>
           <a
